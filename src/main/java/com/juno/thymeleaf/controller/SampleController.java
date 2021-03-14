@@ -20,6 +20,9 @@ public class SampleController {
     @GetMapping({"/ex1"})
     public void ex1(Model model) {
         log.info("ex1.................");
+
+        // return "sample/ex1";을 없이 @GetMapping일 경우, 응답할 템플릿을 같은경로에 있는 지 체크. 시작 경로 : templates
+        // -> Controller 단순화
     }
 
     @GetMapping({"/ex2"})
@@ -36,6 +39,8 @@ public class SampleController {
         }).collect(Collectors.toList());
 
         model.addAttribute("list", list);
+        // return "sample/ex2";을 없이 @GetMapping일 경우, 응답할 템플릿을 같은경로에 있는 지 체크. 시작 경로 : templates
+        // -> Controller 단순화
     }
 
 
