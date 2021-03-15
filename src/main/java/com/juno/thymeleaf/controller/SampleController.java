@@ -5,6 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDateTime;
@@ -41,6 +42,22 @@ public class SampleController {
         model.addAttribute("list", list);
         // return "sample/ex2";을 없이 @GetMapping일 경우, 응답할 템플릿을 같은경로에 있는 지 체크. 시작 경로 : templates
         // -> Controller 단순화
+    }
+
+    @GetMapping("/admin/{indexType}")
+    public void adminIndex(@PathVariable("indexType") String indexType) {
+        log.info("/admin/indexType : " + indexType);
+    }
+
+    @GetMapping("/admin/pages/{menu1}")
+    public void adminPagesMenu1(@PathVariable("menu1") String menu1) {
+        log.info("/admin/pages/menu1 : " + menu1);
+    }
+
+    @GetMapping("/admin/pages/{menu1}/{menu2}")
+    public void adminPagesMenu2(@PathVariable("menu1") String menu1, @PathVariable("menu2") String menu2) {
+        log.info("/admin/pages/menu1 : " + menu1);
+        log.info("/admin/pages/" + menu1 + "/menu2 : " + menu2);
     }
 
     @GetMapping("/loginForm/login1")
