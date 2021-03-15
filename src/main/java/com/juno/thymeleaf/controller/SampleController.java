@@ -43,5 +43,28 @@ public class SampleController {
         // -> Controller 단순화
     }
 
+    @GetMapping("/loginForm/login1")
+    public void login1() {}
+
+    @GetMapping("/loginForm/login2")
+    public void login2() {}
+
+    @GetMapping("/loginForm/login3")
+    public void login3() {}
+
+    @GetMapping("/loginForm/login4")
+    public void login4() {}
+
+    @GetMapping("/loginForm/login5")
+    public void login5() {}
+
+    @GetMapping("/loginForm/login6")
+    public void login6() {}
+
+    @GetMapping("/loginForm/login7")
+    public void login7() {}
+
+    @GetMapping("/loginForm/login8")
+    public void login8() {}
 
 }
